@@ -1,4 +1,4 @@
-const attack = require('./attack');
+import attack from './attack';
 
 test('should attack return', () => {
   const result = attack('sony', 23);
