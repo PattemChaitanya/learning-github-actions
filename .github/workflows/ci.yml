@@ -1,8 +1,8 @@
 name: CI
 on: [push]
 jobs:
-  eslint:
-    name: Lint Code Base
+  standard-checks:
+    name: Lint & test Code Base
     runs-on: ubuntu-latest
 
     steps:
@@ -10,7 +10,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - uses: actions/setup-node@v2
+        with:
+          node-version: "20.5.0"
 
+      - run: node -v
       - name: Install packages
         run: npm ci
 
